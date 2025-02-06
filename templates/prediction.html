@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MovieHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gradient-to-b from-gray-900 to-gray-800 text-gray-200">
+    <!-- Header Section -->
+    <header class="bg-gray-800 shadow-md">
+      <div class="container mx-auto p-5 flex items-center justify-between">
+        <a href="/" class="flex items-center text-gray-200">
+          <div class="bg-indigo-500 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8 text-white" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <span class="ml-3 text-2xl font-bold">MovieMania</span>
+        </a>
+        <nav class="flex space-x-4">
+          <a href="/" class="hover:text-indigo-400 text-gray-300">Home</a>
+          <a href="/about" class="hover:text-indigo-400 text-gray-300">About</a>
+          <a href="/contact" class="hover:text-indigo-400 text-gray-300">Contact</a>
+          <a href="/recommend" class="hover:text-indigo-400 text-gray-300">Recommend</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="py-12">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold text-indigo-400 mb-6">Movie Recommendation System</h1>
+        <p class="text-gray-300 mb-8">
+          A movie recommendation system filters or predicts users preferences based on past choices. 
+          It's an advanced system that suggests movies tailored to your taste.
+        </p>
+
+        <div class="bg-gray-700 shadow-lg rounded-lg p-6 max-w-lg mx-auto">
+          <form action="/recommend" method="POST">
+            <label for="movies" class="block text-sm font-medium text-gray-200 mb-2">Select a Movie</label>
+            <select class="form-select select2 w-full mb-4" id="movies" name="movies">
+              {% for j in movie_list %}
+              <option value="{{j}}">{{j}}</option>
+              {% endfor %}
+            </select>
+            <button type="submit" class="w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600">Get Recommendations</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    {% if status == True %}
+    <section class="py-12 bg-gray-900">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-indigo-400 text-center mb-8">Recommended Movies</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {% for i in range(4) %}
+          <div class="bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img class="w-full h-48 object-cover" src="{{poster[i]}}" alt="{{movies_name[i]}}">
+            <div class="p-4">
+              <h3 class="text-indigo-400 text-sm font-medium mb-1">Movie Name</h3>
+              <h2 class="text-lg font-bold text-gray-200">{{movies_name[i]}}</h2>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Required Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('.select2').select2({
+              placeholder: "Search for a movie",
+              allowClear: true
+          });
+      });
+    </script>
+  </body>
+</html>

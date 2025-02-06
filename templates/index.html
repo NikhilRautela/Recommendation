@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>MovieMania</title>
+  </head>
+  <body class="bg-gray-900 text-gray-200">
+    <!-- Header -->
+    <header class="bg-black text-white shadow-lg">
+      <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <a class="flex items-center text-xl font-bold" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-700 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3">MovieMania</span>
+        </a>
+        <nav class="space-x-6">
+          <a href="/" class="hover:text-purple-400">Home</a>
+          <a href="/about" class="hover:text-purple-400">About Us</a>
+          <a href="/contact" class="hover:text-purple-400">Contact Us</a>
+          <a href="/recommend" class="hover:text-purple-400">Recommendation</a>
+          <a href="/login" class="hover:text-purple-400">LogIn</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20">
+      <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center px-6">
+        <div class="lg:w-1/2">
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4 text-purple-400">Movie Recommendation System</h1>
+          <p class="mb-6 leading-relaxed text-gray-300">Discover movies tailored to your preferences. Our system leverages cutting-edge machine learning to make accurate recommendations based on your past behavior and interests.</p>
+          <a href="/recommend" class="bg-purple-600 text-white hover:bg-purple-500 font-semibold py-2 px-6 rounded-lg shadow">Get Recommendations</a>
+        </div>
+        <div class="lg:w-1/2 flex justify-center">
+          <img src="static/home.svg" alt="MovieMania" class="max-w-full rounded-lg shadow-lg">
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-800">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-semibold text-center mb-12 text-purple-400">Testimonials</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-900 rounded-lg shadow p-6">
+            <p class="italic mb-4 text-gray-300">"Building intelligent solutions with precision and innovation. Experience the future of machine learning, crafted for real-world impact."</p>
+            <div class="flex items-center">
+              <img src="" alt="Manish Rawat" src="../static/manish.jpg" class="w-12 h-12 rounded-full bg-gray-700">
+              <div class="ml-4">
+                <p class="font-bold text-purple-400">Manish Rawat</p>
+                <p class="text-sm text-gray-400">Data Science Enthusiast</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg shadow p-6">
+            <p class="italic mb-4 text-gray-300">"Transforming ideas into visually stunning and user-friendly websites. Crafting digital experiences that leave a lasting impression."</p>
+            <div class="flex items-center">
+              <img src="" alt="Nikhil Singh Rautela" src="/static/nikhil.jpeg" class="w-12 h-12 rounded-full bg-gray-700">
+              <div class="ml-4">
+                <p class="font-bold text-purple-400">Nikhil Singh Rautela</p>
+                <p class="text-sm text-gray-400">Web Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-6">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <a class="flex items-center text-white" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-700 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-lg">MovieMania</span>
+        </a>
+        <p class="text-sm">&copy; 2024 MovieMania - Designed by <span class="text-purple-400">Nikhil Singh Rautela</span></p>
+        <div class="space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+          <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+          <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
